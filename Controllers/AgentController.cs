@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PharmacyAPI.Data;
 using PharmacyAPI.Models;
@@ -48,8 +49,8 @@ namespace PharmacyWebAPI.Controllers
             // Update fields
             existingAgent.Name = updatedAgent.Name;
             existingAgent.Age = updatedAgent.Age;
-            existingAgent.PhoneNumber = updatedAgent.Gender;
-            existingAgent.Address = updatedAgent.PhoneNumber;
+            existingAgent.PhoneNumber = updatedAgent.PhoneNumber;
+            existingAgent.Address = updatedAgent.Address;
             existingAgent.Gender = updatedAgent.Gender;
 
             await _context.SaveChangesAsync();
